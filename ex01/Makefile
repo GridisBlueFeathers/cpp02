@@ -6,10 +6,10 @@
 #    By: svereten <svereten@student.42vienna.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/30 15:52:43 by svereten          #+#    #+#              #
-#    Updated: 2025/04/30 15:53:03 by svereten         ###   ########.fr        #
+#    Updated: 2025/04/30 21:05:10 by svereten         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-NAME = ex00
+NAME = ex01
 
 CXX = c++
 

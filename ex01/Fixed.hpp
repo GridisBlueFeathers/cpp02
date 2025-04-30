@@ -6,7 +6,7 @@
 /*   By: svereten <svereten@student.42vienna.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 15:36:47 by svereten          #+#    #+#             */
-/*   Updated: 2025/04/30 16:12:04 by svereten         ###   ########.fr       */
+/*   Updated: 2025/04/30 19:54:18 by svereten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef FIXED_HPP
@@ -25,14 +25,13 @@ public:
 
 	int		getRawBits(void);
 	void	setRawBits(int const raw);
-	float	toFloat(void);
-	int		toInt(void);
+	float	toFloat(void) const;
+	int		toInt(void) const;
 
 private:
 	static int	_fractionNum;
 	int			_value;
 };
 
-std::ostream &operator<<(std::ostream &out, Fixed &fixed);
-
+std::ostream &operator<<(std::ostream &out, const Fixed &fixed);
 #endif
