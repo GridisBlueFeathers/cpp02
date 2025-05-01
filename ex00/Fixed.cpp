@@ -6,13 +6,11 @@
 /*   By: svereten <svereten@student.42vienna.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 15:36:44 by svereten          #+#    #+#             */
-/*   Updated: 2025/04/30 15:49:51 by svereten         ###   ########.fr       */
+/*   Updated: 2025/05/01 19:18:17 by svereten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "Fixed.hpp"
 #include <iostream>
-
-int	Fixed::_fractionNum = 8;
 
 Fixed::Fixed(): _value(0) {
 	std::cout << "Default constructor called\n";
@@ -26,7 +24,6 @@ Fixed::Fixed(Fixed &fixed) {
 Fixed &Fixed::operator=(Fixed &fixed) {
 	std::cout << "Copy assignment operator called\n";
 	if (this != &fixed) {
-		_fractionNum = fixed._fractionNum;
 		_value = fixed.getRawBits();
 	}
 	return *this;
