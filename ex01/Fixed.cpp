@@ -6,14 +6,12 @@
 /*   By: svereten <svereten@student.42vienna.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 15:57:00 by svereten          #+#    #+#             */
-/*   Updated: 2025/04/30 21:01:10 by svereten         ###   ########.fr       */
+/*   Updated: 2025/05/01 19:25:36 by svereten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "Fixed.hpp"
 #include <iostream>
 #include <cmath>
-
-int	Fixed::_fractionNum = 8;
 
 Fixed::Fixed(): _value(0) {
 	std::cout << "Default constructor called\n";
@@ -29,7 +27,7 @@ Fixed::Fixed(const int value) {
 	std::cout << "Int constructor called\n";
 
 	_value = value;
-	_value <<= 8;
+	_value <<= _fractionNum;
 }
 
 Fixed::Fixed(const float value) {
@@ -41,7 +39,6 @@ Fixed::Fixed(const float value) {
 Fixed &Fixed::operator=(const Fixed &fixed) {
 	std::cout << "Copy assignment operator called\n";
 	if (this != &fixed) {
-		_fractionNum = fixed._fractionNum;
 		_value = fixed._value;
 	}
 	return *this;
@@ -54,14 +51,14 @@ Fixed::~Fixed() {
 float	Fixed::toFloat(void) const {
 	float	res;
 
-	res = static_cast<float>(_value) / (1 << 8);
+	res = static_cast<float>(_value >> _fractionNum);
 	return (res);
 }
 
 int	Fixed::toInt(void) const {
 	int	res;
 
-	res = _value >> 8;
+	res = _value >> _fractionNum;
 	return (res);
 }
 

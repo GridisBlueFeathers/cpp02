@@ -6,7 +6,7 @@
 /*   By: svereten <svereten@student.42vienna.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 15:36:47 by svereten          #+#    #+#             */
-/*   Updated: 2025/04/30 19:54:18 by svereten         ###   ########.fr       */
+/*   Updated: 2025/05/01 19:19:21 by svereten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef FIXED_HPP
@@ -29,7 +29,7 @@ public:
 	int		toInt(void) const;
 
 private:
-	static int	_fractionNum;
+	static const int	_fractionNum = 8;
 	int			_value;
 };
 
