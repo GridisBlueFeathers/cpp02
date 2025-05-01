@@ -6,7 +6,7 @@
 /*   By: svereten <svereten@student.42vienna.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 15:57:00 by svereten          #+#    #+#             */
-/*   Updated: 2025/05/01 19:25:36 by svereten         ###   ########.fr       */
+/*   Updated: 2025/05/01 19:30:39 by svereten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "Fixed.hpp"
@@ -33,7 +33,7 @@ Fixed::Fixed(const int value) {
 Fixed::Fixed(const float value) {
 	std::cout << "Float constructor called\n";
 	
-	_value = static_cast<int>(roundf(value * 256));
+	_value = static_cast<int>(roundf(value * (1 << _fractionNum)));
 }
 
 Fixed &Fixed::operator=(const Fixed &fixed) {
@@ -51,7 +51,7 @@ Fixed::~Fixed() {
 float	Fixed::toFloat(void) const {
 	float	res;
 
-	res = static_cast<float>(_value >> _fractionNum);
+	res = static_cast<float>(_value) / (1 << _fractionNum);
 	return (res);
 }
 
