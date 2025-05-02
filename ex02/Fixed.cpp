@@ -6,7 +6,7 @@
 /*   By: svereten <svereten@student.42vienna.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 15:57:00 by svereten          #+#    #+#             */
-/*   Updated: 2025/05/01 19:08:27 by svereten         ###   ########.fr       */
+/*   Updated: 2025/05/02 16:03:48 by svereten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "Fixed.hpp"
@@ -18,11 +18,9 @@ Fixed::Fixed(): _value(0) {
 		std::cout << "Default constructor called\n";
 }
 
-Fixed::Fixed(const Fixed &fixed) {
+Fixed::Fixed(const Fixed &fixed): _value(fixed._value) {
 	if (DEBUG)
 		std::cout << "Copy constructor called\n";
-
-	*this = fixed;
 }
 
 Fixed::Fixed(const int value) {
